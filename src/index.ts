@@ -15,7 +15,6 @@ export function apply(ctx: Context) {
 
   ctx.on("nazrin/music", async (ctx, keyword) => {
     let result = await ctx.http.get(`https://api.xingzhige.com/API/Kugou_GN_new/?name=${encodeURIComponent(keyword)}`)
-    console.log(result)
     let findList = []
     if (result.code !== 0) {
       findList = [
@@ -37,16 +36,13 @@ export function apply(ctx: Context) {
         })
       }
     }
-    console.log(findList)
 
     ctx.emit('nazrin/search_over', findList)
   })
 
   ctx.on("nazrin/parse_music", async (ctx, platform, url, data) => {
     if (platform !== thisPlatform) return
-    console.log(data)
     let {data: songdata} = await ctx.http.get(`https://api.xingzhige.com/API/Kugou_GN_new/?name=${encodeURIComponent(data.name)}&n=${data.n}`)
-    console.log(songdata)
     let second = (+songdata.interval.slice(0, songdata.interval.lastIndexOf("分")) * 60) + songdata.interval.slice(songdata.interval.lastIndexOf("分") + 1, songdata.interval.lastIndexOf("秒"))
     ctx.emit('nazrin/parse_over', 
       songdata.src,
