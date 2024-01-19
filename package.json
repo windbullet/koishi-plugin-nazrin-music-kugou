@@ -9,6 +9,11 @@
     "dist"
   ],
   "license": "MIT",
+  "homepage": "https://github.com/windbullet/koishi-plugin-nazrin-music-kugou",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/windbullet/koishi-plugin-nazrin-music-kugou.git"
+  },
   "keywords": [
     "chatbot",
     "koishi",
