@@ -1,7 +1,7 @@
 {
   "name": "koishi-plugin-nazrin-music-kugou",
   "description": "nazrin聚合搜索-酷狗音乐支持",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "files": [
@@ -9,13 +9,15 @@
     "dist"
   ],
   "license": "MIT",
-  "scripts": {},
   "keywords": [
     "chatbot",
     "koishi",
     "plugin"
   ],
   "peerDependencies": {
-    "koishi": "4.16.4"
+    "koishi": "^4.16.4"
+  },
+  "devDependencies": {
+    "koishi-plugin-nazrin-core": "^0.1.10"
   }
 }
